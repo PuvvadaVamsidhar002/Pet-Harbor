@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Donation Page</title>
+  <style>
+    /* Your CSS styles go here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container{
+            width: 100%;
+            height: 100%;
+            background-color: #ffdd0093;
+            background-repeat: no-repeat;
+            color: azure;
+            background-size: cover;
+            background-position: center center;
+            height: 100vh; /* Added a background color for visibility */
+        }
+        .container .containerinner{
+            width: 100%;
+            height: 75px; /* Corrected typo in background-color */
+            margin: auto;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 25px;
+            position: fixed;
+            background-color:#333;
+        }
+        .container .containerinner ul {
+            list-style-type: none;
+            display: flex;
+            padding: 50px;
+        }
+        .container .containerinner ul li {
+            margin-right: 60px; /* Decrease the margin between the options */
+        transition: background-color 0.3s ease;
+        font-size: 18px;
+        padding: 7px 7px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        }
+        .container .containerinner ul li:hover {
+            background-color: rgba(236, 183, 24, 0.671); /* Add a hover effect with a semi-transparent white background */
+        }   
+        .container .containerinner ul li:last-child {
+            margin-right: 0;
+        }
+
+        .container .containerinner .signup:hover{
+            background-color: #d7c00f;
+        }
+        .container .containerinner button.signup {
+            color: #fff;
+            background-color: transparent;
+            border: none;
+            transition: background-color 0.3s;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 50px; 
+            font-size: larger;/* Move the button closer to the "Login" button */
+        }
+        .container .containerinner button.harbor {
+    background-color: transparent; /* Make the background transparent */
+    border: none; /* Remove the border */
+    color: rgba(255, 255, 255, 0.8); /* Change the color of the text to white with 80% opacity */
+    cursor: pointer;
+    font-size:x-large;
+}
+        .container .containerinner button ion-icon {
+        color: rgba(213, 8, 38, 0.8);
+            background-color: transparent;
+            border: none; /* Change the color of the icon to white with 80% opacity */
+        }
+        .container .containerinner ul li a {
+            color: inherit; /* Inherit the color from the parent element */
+            text-decoration: none;
+        }
+    .containers {
+      width: 100%;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box; /* Ensure padding is included in the width calculation */
+    }
+
+    .donation-section {
+      text-align: center;
+    }
+
+    .donation-bar {
+      width: 50%; /* Increased horizontal width */
+      height: 30px; /* Increased vertical height */
+      background-color: #ddd;
+      border-radius: 15px; /* Add curved edges */
+      overflow: hidden; /* Hide overflow for curved edges */
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23); /* Add shadow effect */
+      display: flex;
+      align-items: center; /* Align content vertically center */
+    }
+
+    .donation-bar div {
+      height: 100%;
+      background-color: #27a227;
+      transition: width 0.3s ease; /* Add transition effect for width change */
+      border-radius: 15px; /* Add curved edges to the progress bar */
+      width: 50%; /* Change initial donation percentage to 50% */
+    }
+
+    .donation-image {
+      width: 100%;
+      height: 20px; /* Adjust this to match the end of the progress bar container */
+    }
+
+    .donation-image img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .grid-section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      width: 100%; /* This will make the grid sections cover the whole page */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect to the grid */
+      border-radius: 10px; /* Add curved edges to the grid */
+    }
+
+    .grid-item {
+      text-align: center;
+      border: 1px solid #000; /* Add a border to the grid items */
+      transition: all 0.3s ease; /* Add a transition effect */
+      border-radius: 10px; /* Add curved edges to the grid items */
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect to the grid items */
+    }
+
+    .grid-item:hover {
+      background-color: #ddd; /* Change the background color on hover */
+    }
+
+    .donation-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Align the donation bar to the center */
+    }
+
+    .donate-button {
+      margin-top: 20px;
+      padding: 10px 10px;
+      background-color: #000000;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease; /* Add a transition effect */
+      border-radius: 15px; /* Add curved edges to the button */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect to the button */
+      text-decoration: none; /* Remove default underline for anchor tag appearance */
+    }
+
+    .donate-button:hover {
+      background-color: #45a049; /* Change the background color on hover */
+    }
+
+    /* Center the Future Plans heading */
+    .future-plans-heading {
+      text-align: center;
+      
+    }
+
+    /* Style for horizontal grid items */
+    .horizontal-grid {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .horizontal-grid .grid-item {
+      width: calc(33.33% - 20px); /* Adjust width for spacing */
+    }
+
+    .grid-item img {
+      width: 100%; /* Make the image fill the grid item */
+      height: auto;
+      /* Make the image fill the grid item */
+      object-fit: cover;
+      border-radius: 10px; /* Add curved edges to the image */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow effect to the grid items */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="containerinner">
+        <a href="title 2.php"><button class="harbor"><ion-icon name="paw-outline"></ion-icon> Pet Harbor</button></a>
+        <ul>
+            <li><a href="title 2.php">Home</a></li>
+            <li><a href="achive.html">Achievements</a></li>
+            <li><a href="adoption.html">Adoption</a></li>
+            <li><a href="new.html">Donation</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <a href="login.php"><button class="signup">Login/Sign-Up</button></a>
+    </div>
+<div class="containers">
+  <!-- Donation Section -->
+  <div class="donation-section">
+    <h1 style="margin-top: 10%;color: #333;"> Donation Progress<br> Yippeee.. You are half way there<br></h1>
+    <div class="donation-bar" id="donation-bar">
+      <div style="width: 50%;"></div> <!-- Change initial width to 50% -->
+      <p id="donation-percentage">50%</p> <!-- Display the percentage value -->
+    </div>
+    <a href="trans.html" class="donate-button">Donate</a> <!-- Add an anchor tag to load another webpage -->
+  </div>
+</div>
+<h1 style="margin-left: 45%;">Past event</h1>
+
+<div class="container">
+  
+  <!-- Grid Section -->
+  <div class="grid-section">
+    <!-- Past Expenditure -->
+    <div class="grid-item">
+      <img src="image1.jpg" alt="Image 1">
+      <h3>"From Donation to Transformation"</h3> <!-- Main Heading for Past Expenditure -->
+      <p>
+        Meet Buddy, a once-neglected pup who found his second chance through your donations. Thanks to your generosity, we were able to provide Buddy with the medical care he desperately needed. With your support, Buddy received surgeries to correct his injuries and found a loving forever home where he now enjoys endless cuddles and playtime. Your donations truly made a difference in transforming Buddy's life.
+      </p>
+    </div>
+    <!-- Previous Events -->
+    <div class="grid-item">
+      <img src="image2.jpg" alt="Image 2">
+      <h3>"Rescued from Despair"
+      </h3>
+      <p>Meet Luna, a timid cat rescued from a life of neglect and abandonment. Thanks to your donations, Luna was rescued from a dire situation and placed into our care. With your support, Luna received proper veterinary attention, nutritious food, and a warm bed to sleep in. Today, Luna has blossomed into a confident
+      </p>
+    </div>
+    <!-- Future Plans -->
+    <div class="grid-item future-plans-heading">
+      <img src="image3.jpg" alt="Image 3">
+      <h3>"Healing Hearts, One Donation at a Time"</h3> <!-- Main Heading for Future Plans -->
+      <p>Meet Max, a senior dog who found himself abandoned in his golden years. Thanks to your donations, Max received the care and attention he needed to overcome his loneliness and health issues. With your support, Max was placed into a loving foster home where he spent his final years surrounded by love and comfort. Your contributions brought joy to Max's life and eased his journey across the rainbow bridge.
+      </p>
+    </div>
+  </div>
+<div class="container">
+  <h1 style="margin-left: 45%;margin-top: 30px;">Future plans</h1>
+  <!-- Additional Horizontal Grid Section -->
+  <div class="horizontal-grid">
+    <!-- Horizontal Grid Items -->
+    <div class="grid-item">
+      <img src="image4.jpg" alt="Image 4">
+      <h3>"Building a Sanctuary for Strays"</h3>
+      <p>Your donations have laid the foundation for our upcoming project: building a sanctuary for stray animals. With your continued support, we aim to create a safe haven where abandoned pets can receive shelter, medical care, and rehabilitation. Together, we can provide a brighter future for countless animals in need, ensuring they receive the love and care they deserve until they find their forever homes.
+      </p>
+    </div>
+    <div class="grid-item">
+      <img src="image5.jpg" alt="Image 5">
+      <h3>"Expanding Spay and Neuter Programs"</h3>
+      <p>Your donations are vital in expanding our spay and neuter programs to combat pet overpopulation. With your continued support, we plan to reach more communities, offering affordable and accessible spaying and neutering services. By preventing unplanned litters, we can reduce the number of homeless pets and alleviate the strain on animal shelters. Your contributions will directly impact the welfare of countless animals in the years to come.
+      </p>
+    </div>
+    <div class="grid-item">
+      <img src="image6.jpg" alt="Image 6">
+      <h3>"Expanding Spay and Neuter Programs"</h3>
+      <p> Your donations are vital in expanding our spay and neuter programs to combat pet overpopulation. With your continued support, we plan to reach more communities, offering affordable and accessible spaying and neutering services. By preventing unplanned litters, we can reduce the number of homeless pets and alleviate the strain on animal shelters. Your contributions will directly impact the welfare of countless animals in the years to come.</p>
+    </div>
+  </div>
+</div>
+  </div>
+</body>
+</html>

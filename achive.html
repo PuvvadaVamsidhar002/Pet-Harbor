@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body {
+  font-family: Arial, sans-serif;       
+  background-color: #f0f0f0;
+  color: #333; /* Changed text color */
+}
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #ffdd0093;
+  background-repeat: no-repeat;
+  color: azure;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  background-blend-mode:hard-light;
+  position: relative;
+}
+.container .containerinner {
+  width: 100%;
+  height: 75px;
+  margin: auto;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 25px;
+  position: fixed;
+  background-color: #333;
+}
+.container .containerinner ul {
+  list-style-type: none;
+  display: flex;
+  padding: 50px;
+}
+.container .containerinner ul li {
+  margin-right: 60px;
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+  padding: 7px 7px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container .containerinner ul li:hover {
+  background-color: rgba(236, 183, 24, 0.671);
+}   
+.container .containerinner ul li:last-child {
+  margin-right: 0;
+}
+.container .containerinner .signup:hover {
+  background-color: #d7c00f;
+}
+.container .containerinner button.signup {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.3s;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 20px; 
+  font-size: larger;
+}
+.container .containerinner button.harbor {
+  background-color: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  font-size: x-large;
+}
+.container .containerinner button ion-icon {
+  color: rgba(213, 8, 38, 0.8);
+  background-color: transparent;
+  border: none;
+}
+.container .containerinner ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.containers {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Added gap between cards */
+  margin-top: 30px; /* Added margin between text and cards */
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid #e4e480;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s, background-color 0.3s;
+  background-color: #ffffff;
+  color: black;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background-color: #cc334f;
+  color: black;
+}
+
+.card-icon {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.card-number {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.card-label {
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="containerinner">
+        <a href="title 2.php"><button class="harbor"><ion-icon name="paw-outline"></ion-icon> Pet Harbor</button></a>
+        <ul>
+            <li><a href="title 2.php">Home</a></li>
+            <li><a href="achive.html">Achievements</a></li>
+            <li><a href="adoption.html">Adoption</a></li>
+            <li><a href="new.html">Donation</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <a href="login.php"><button class="signup">Login/Sign-Up</button></a>
+    </div>
+<div class="containers">
+  <h1 class="text-center" style="font-size: xxx-large;color: #333;">Our Achievements</h1>
+  <p class="text-center" style="font-weight:bold; color: rgba(184, 28, 67, 0.834);font-size: x-large;">In less than one year, our team at Petharbor has rescued and found homes for more than 300 stray cats and dogs. We believe in making our world a better place for helpless animals.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🏅</div>
+      <div class="card-number" id="memberships">1245</div>
+      <div class="card-label">Memberships</div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🐾</div>
+      <div class="card-number" id="happyPets">357</div>
+      <div class="card-label">Happy Pets</div>
+    </div>
+    
+    <div class="card">
+      <div class="card-icon">❤️</div>
+      <div class="card-number" id="customers">930</div>
+      <div class="card-label">Customers</div>
+    </div>
+  </div>
+</div>
+  </div>
+<script>
+  // Function to generate a random number between min (inclusive) and max (exclusive)
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+
+  // Update the card numbers with random numbers when the page loads
+  window.addEventListener('load', function() {
+    document.getElementById('memberships').innerText = getRandomInt(1000, 2000);
+    document.getElementById('happyPets').innerText = getRandomInt(300, 400);
+    document.getElementById('customers').innerText = getRandomInt(800, 1000);
+  });
+</script>
+</body>
+</html>

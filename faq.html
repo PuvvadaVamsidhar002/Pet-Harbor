@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption FAQs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0px;
+            background-color: #ffdd0093;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            color: azure;
+            background-size: cover;
+            background-position: center center;
+            height: 100vh; /* Added a background color for visibility */
+        }
+        .container .containerinner{
+            width: 100%;
+            
+            height: 75px; /* Corrected typo in background-color */
+            margin: auto;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 25px;
+            position: fixed;
+            background-color:#333;
+        }
+        .container .containerinner ul {
+            list-style-type: none;
+            display: flex;
+            padding: 50px;
+        }
+        .container .containerinner ul li {
+            margin-right: 60px; /* Decrease the margin between the options */
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+            padding: 7px 7px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .container .containerinner ul li:hover {
+            background-color: rgba(236, 183, 24, 0.671); /* Add a hover effect with a semi-transparent white background */
+        }   
+        .container .containerinner ul li:last-child {
+            margin-right: 0;
+        }
+
+        .container .containerinner .signup:hover{
+            background-color: #d7c00f;
+        }
+        .container .containerinner button.signup {
+            color: #fff;
+            background-color: transparent;
+            border: none;
+            transition: background-color 0.3s;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-right: 45px; 
+            font-size: larger;/* Move the button closer to the "Login" button */
+        }
+        .container .containerinner button.harbor {
+            background-color: transparent; /* Make the background transparent */
+            border: none; /* Remove the border */
+            color: rgba(255, 255, 255, 0.8); /* Change the color of the text to white with 80% opacity */
+            cursor: pointer;
+            font-size:x-large;
+        }
+        .container .containerinner button ion-icon {
+            color: rgba(213, 8, 38, 0.8);
+            background-color: transparent;
+            border: none; /* Change the color of the icon to white with 80% opacity */
+        }
+        .container .containerinner ul li a {
+            color: inherit; /* Inherit the color from the parent element */
+            text-decoration: none;
+        }
+        .containers {
+            position: absolute;
+            top: 17%;
+            left: 22%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color:#fff ;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+            text-align: center;
+        }
+        .question {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #4caf50;
+        }
+        .answer {
+            margin-bottom: 20px;
+            margin-left: 20px;
+            color: #666;
+        }
+        .question-form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .question-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .question-form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .question-form input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .question-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+ <div class="container">
+        <div class="containerinner">
+            <a href="title 2.php"><button class="harbor"><ion-icon name="paw-outline"></ion-icon> Pet Harbor</button></a>
+            <ul>
+                <li><a href="title 2.php">Home</a></li>
+                <li><a href="achive.html">Achievements</a></li>
+                <li><a href="adoption.html">Adoption</a></li>
+                <li><a href="new.html">Donation</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <a href="login.php"><button class="signup">Login/Sign-Up</button></a>
+        </div>
+<div class="containers">
+    <h1>Frequently Asked Questions</h1>
+    <div class="question">1. How does the pet adoption process work?</div>
+    <div class="answer">Our pet adoption process is simple. You can start by browsing our available pets online or visiting our adoption center. Once you find a pet you're interested in, fill out an adoption application. Our team will review your application and may conduct a home visit to ensure it's a good fit. If approved, you can then complete the adoption paperwork and take your new furry friend home!</div>
+
+    <div class="question">2. What are the adoption fees?</div>
+    <div class="answer">Adoption fees vary depending on the type of pet and any special circumstances. These fees typically cover vaccinations, spaying/neutering, microchipping, and other necessary medical treatments. Contact us directly or check our website for current adoption fees.</div>
+
+    <div class="question">3. Are the pets up-to-date on vaccinations and medical care?</div>
+    <div class="answer">Yes, all pets available for adoption are up-to-date on vaccinations and have received necessary medical care. They are also spayed/neutered and microchipped before being adopted out.</div>
+
+    <div class="question">4. Can I meet the pets before adopting?</div>
+    <div class="answer">Absolutely! We encourage potential adopters to spend time getting to know the pets they're interested in. You can visit our adoption center during operating hours or schedule a meet-and-greet with a specific pet.</div>
+
+    <div class="question">5. What if I need assistance after adopting?</div>
+    <div class="answer">We're here to support you every step of the way! If you have any questions or concerns after adopting, don't hesitate to reach out to our team. We can provide guidance on pet care, behavior training, and more.</div>
+
+    <div class="question">6. Do you offer any resources for new pet owners?</div>
+    <div class="answer">Yes, we provide resources and educational materials for new pet owners. These may include tips on pet care, training advice, and recommendations for local veterinarians and pet services.</div>
+
+    <div class="question">7. Can I return a pet if it doesn't work out?</div>
+    <div class="answer">While we hope every adoption is successful, we understand that circumstances can change. If you find yourself unable to keep your adopted pet, please contact us immediately. We have a return policy in place to ensure the well-being of our animals.</div>
+
+    <div class="question">8. Are there any restrictions on who can adopt?</div>
+    <div class="answer">We welcome all potential adopters, but we do have certain criteria to ensure the best possible match between pet and owner. These criteria may include age restrictions, home environment considerations, and other factors. Contact us for more information.</div>
+
+    <div class="question">9. Can I adopt if I live outside your area?</div>
+    <div class="answer">In some cases, we may consider adoptions outside our immediate area. However, additional requirements and arrangements may apply. Please reach out to our team for assistance.</div>
+
+    <div class="question">10. How can I support your organization if I'm not ready to adopt?</div>
+    <div class="answer">There are many ways to support our mission even if you're not ready to adopt. You can donate, volunteer your time, foster a pet, or help spread the word about pet adoption through social media and community outreach.</div>
+    <div class="question-form">
+        <h3>Have a question? Ask us!</h3>
+        <form id="questionForm" action="submit.php" method="POST">
+        <label for="questionText">Your Question:</label>
+        <input type="text" id="questionText" name="questionText" required>
+        <br>
+        <input type="submit" value="Submit Question">
+        </form>
+    </div>
+</div>
+</div>

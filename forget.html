@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.container {
+  position: relative; /* Added position relative */
+  width: 100%;
+  height: 100%;
+  background-color: #ffdd0093;
+  background-repeat: no-repeat;
+  color: azure;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+}
+
+.container .containerinner {
+  width: 100%;
+  height: 75px;
+  margin: auto;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 25px;
+  position: fixed;
+  background-color: #333;
+}
+
+.container .containerinner ul {
+  list-style-type: none;
+  display: flex;
+  padding: 50px;
+}
+
+.container .containerinner ul li {
+  margin-right: 60px;
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+  padding: 7px 7px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container .containerinner ul li:hover {
+  background-color: rgba(236, 183, 24, 0.671);
+}
+
+.container .containerinner ul li:last-child {
+  margin-right: 0;
+}
+
+.container .containerinner .signup:hover {
+  background-color: #d7c00f;
+}
+
+.container .containerinner button.signup {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.3s;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 50px;
+  font-size: larger;
+}
+
+.container .containerinner button.harbor {
+  background-color: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  font-size: x-large;
+}
+
+.container .containerinner button ion-icon {
+  color: rgba(213, 8, 38, 0.8);
+  background-color: transparent;
+  border: none;
+}
+
+.container .containerinner ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.containers {
+  position: absolute; /* Changed position to absolute */
+  top: 50%; /* Positioned at 50% from the top */
+  left: 50%; /* Positioned at 50% from the left */
+  transform: translate(-50%, -50%); /* Centered horizontally and vertically */
+}
+
+.form {
+  background-color: #fff; /* Changed background color to white */
+  padding: 40px; /* Increased padding */
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1); /* Added box shadow */
+  max-width: 400px; /* Added max-width */
+  width: 100%; /* Added width */
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px; /* Increased padding */
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* Added border */
+  border-radius: 8px; /* Added border radius */
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px; /* Increased padding */
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px; /* Added border radius */
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.resend-link {
+  display: none;
+  margin-top: 20px;
+  text-align: right;
+  font-size: 14px;
+  text-decoration: underline;
+  color: black;
+  transition: color 0.3s;
+}
+
+.resend-link:hover {
+  color: red;
+}
+
+#countdown {
+  text-align: right;
+  font-size: 14px;
+}
+</style>
+<script>
+function startCountdown() {
+  var count = 30;
+  var countdown = setInterval(function() {
+    document.getElementById('countdown').innerHTML = count + " seconds remaining";
+    count--;
+    if (count < 0) {
+      clearInterval(countdown);
+      document.getElementById('countdown').style.display = 'none';
+      document.getElementById('resend').style.display = 'block';
+    }
+  }, 1000);
+}
+</script>
+</head>
+<body>
+  <div class="container">
+    <div class="containerinner">
+        <a href="title 2.html"><button class="harbor"><ion-icon name="paw-outline"></ion-icon> Pet Harbor</button></a>
+        <ul>
+            <li><a href="title 2.html">Home</a></li>
+            <li><a href="achive.html">Achievements</a></li>
+            <li><a href="adoption.html">Adoption</a></li>
+            <li><a href="new.html">Donation</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <a href="login.php"><button class="signup">Login/Sign-Up</button></a>
+    </div>
+  </div> <!-- Close .container -->
+  <div class="containers">
+    <div class="form">
+      <h2>Password Reset</h2>
+      <p>Please enter your email to reset your password.</p>
+      <form>
+        <input type="email" class="input-field" placeholder="Enter your email" required>
+        <button type="submit" class="submit-button" onclick="startCountdown()">Reset Password</button>
+        <p id="countdown"></p>
+        <p id="resend" class="resend-link">Resend Email</p>
+      </form>
+    </div>
+  </div> <!-- Close .containers -->
+</body>
+</html>
